@@ -9,19 +9,22 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 public class Util {
 
+    public static ArrayList<ArgumentBuilder<ServerCommandSource, ?>> argumentBuilders = new ArrayList<>();
+
     public static LiteralArgumentBuilder<ServerCommandSource> buildFromJson(JSONObject json) {
         LiteralArgumentBuilder<ServerCommandSource> root = CommandManager.literal("commands");
         json.forEach((key, value) -> {
-            root.then(make(key, value));
+            root.then(buildCommandBuilder(key, value));
         });
         return root;
     }
 
-    public static ArgumentBuilder<ServerCommandSource, ?> make(String key, Object value) {
+    public static ArgumentBuilder<ServerCommandSource, ?> buildCommandBuilder(String key, Object value) {
         if (value instanceof String) {
             switch ((String) value) {
                 case "INTEGER":
@@ -51,7 +54,7 @@ public class Util {
             LiteralArgumentBuilder<ServerCommandSource> builder = CommandManager.literal(key);
             if (value instanceof Map) {
                 ((Map<String, Object>) value).forEach((key1, value1) -> {
-                    builder.then(make(key1, value1));
+                    builder.then(buildCommandBuilder(key1, value1));
                 });
             }
             return builder;
