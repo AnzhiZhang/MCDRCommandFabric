@@ -29,6 +29,8 @@ dependencies {
 
 	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
 	// You may need to force-disable transitiveness on them.
+	implementation "com.alibaba.fastjson2:fastjson2:2.0.19"
+	include "com.alibaba.fastjson2:fastjson2:2.0.19"
 }
 
 processResources {
