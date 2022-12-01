@@ -1,9 +1,9 @@
-# Fabric Example Mod
+# Minecraft Command Register
 
-## Setup
+> 在 Minecraft 中注册 MCDReforged 指令
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
+例：`!!MCDR` 将被注册为 `/!!MCDR`、`!!qb` 将被注册为 `/!!qb`
 
-## License
+## 安装指南
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+安装 MCDR 插件 [Minecraft Command Register](https://github.com/AnzhiZhang/MCDReforgedPlugins/tree/master/minecraft_command_register)。
