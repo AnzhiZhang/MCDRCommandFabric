@@ -1,5 +1,11 @@
 # Minecraft Command Register
 
+[![License](https://shields.io/github/license/AnzhiZhang/MCDRCommandFabric?label=License)](https://github.com/AnzhiZhang/MCDRCommandFabric/blob/master/LICENSE)
+[![Build](https://img.shields.io/github/actions/workflow/status/AnzhiZhang/MCDRCommandFabric/build.yml?label=Build&branch=master)](https://github.com/AnzhiZhang/MCDRCommandFabric/actions/workflows/release.yml)
+[![Downloads](https://shields.io/github/downloads/AnzhiZhang/MCDRCommandFabric/total?label=Downloads)](https://github.com/AnzhiZhang/MCDRCommandFabric/releases)
+[![Release](https://shields.io/github/v/release/AnzhiZhang/MCDRCommandFabric?display_name=tag&include_prereleases&label=Release)](https://github.com/AnzhiZhang/MCDRCommandFabric/releases/latest)
+[![Gitmoji](https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg)](https://gitmoji.dev/)
+
 > 在 Minecraft 中注册 MCDReforged 指令
 
 例：`!!MCDR` 将被注册为 `/!!MCDR`、`!!qb` 将被注册为 `/!!qb`
