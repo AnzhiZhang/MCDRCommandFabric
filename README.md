@@ -8,7 +8,7 @@
 
 Register  [MCDR](https://github.com/Fallen-Breath/MCDReforged)  commands in Minecraft for completion.
 
-Example: `!!MCDR will be registed as `/!!MCDR`, `!!qb` to `/!!qb`.
+Example: `!!MCDR` will be registed as `/!!MCDR`, `!!qb` to `/!!qb`.
 
 Also needs install MCDReforged plugin [Minecraft Command Registe](https://github.com/AnzhiZhang/MCDReforgedPlugins/tree/master/minecraft_command_register)
 
