@@ -2,13 +2,13 @@
 
 [![License](https://shields.io/github/license/AnzhiZhang/MCDRCommandFabric?label=License)](https://github.com/AnzhiZhang/MCDRCommandFabric/blob/master/LICENSE)
 [![Build](https://img.shields.io/github/actions/workflow/status/AnzhiZhang/MCDRCommandFabric/build.yml?label=Build&branch=master)](https://github.com/AnzhiZhang/MCDRCommandFabric/actions/workflows/release.yml)
-[![Downloads](https://shields.io/github/downloads/AnzhiZhang/MCDRCommandFabric/total?label=Downloads)](https://github.com/AnzhiZhang/MCDRCommandFabric/releases)
+[![CurseForge](https://cf.way2muchnoise.eu/short_811204_downloads.svg)](https://www.curseforge.com/minecraft/mc-mods/mcdr-command-fabric)
 [![Release](https://shields.io/github/v/release/AnzhiZhang/MCDRCommandFabric?display_name=tag&include_prereleases&label=Release)](https://github.com/AnzhiZhang/MCDRCommandFabric/releases/latest)
 [![Gitmoji](https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg)](https://gitmoji.dev/)
 
 Register  [MCDR](https://github.com/Fallen-Breath/MCDReforged)  commands in Minecraft for completion.
 
-Example: `!!MCDR will be registed as `/!!MCDR`, `!!qb` to `/!!qb`.
+Example: `!!MCDR` will be registed as `/!!MCDR`, `!!qb` to `/!!qb`.
 
 Also needs install MCDReforged plugin [Minecraft Command Registe](https://github.com/AnzhiZhang/MCDReforgedPlugins/tree/master/minecraft_command_register)
 
