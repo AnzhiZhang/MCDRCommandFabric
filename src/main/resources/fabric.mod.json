@@ -4,8 +4,13 @@
   "version": "${version}",
   "name": "MCDRCommand",
   "description": "Register MCDReforged commands in Minecraft",
-  "authors": [],
+  "authors": [
+    "Andy Zhang",
+    "czruby"
+  ],
   "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/mcdr-command-fabric",
+    "sources": "https://github.com/AnzhiZhang/MCDRCommandFabric"
   },
   "license": "GPL",
   "icon": "assets/mcdrcommand/icon.png",
@@ -15,10 +20,12 @@
       "com.zhanganzhi.mcdrcommand.fabric.MCDRCommand"
     ]
   },
-  "mixins": [],
+  "mixins": [
+  ],
   "depends": {
-    "fabricloader": ">=0.7.4",
-    "fabric": "*",
-    "minecraft": "1.16.x"
+    "fabricloader": ">=0.14.10",
+    "fabric-api": "*",
+    "minecraft": "~1.19",
+    "java": ">=17"
   }
 }

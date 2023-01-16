@@ -11,7 +11,7 @@ public class CommonCommandHandler implements Command<ServerCommandSource> {
         LogManager.getLogger().info(
                 "<{}> {}",
                 context.getSource().getName(),
-                context.getInput().substring(1)
+                context.getInput()
         );
         return Command.SINGLE_SUCCESS;
     }

@@ -23,7 +23,7 @@ public class RegisterCommandHandler implements Command<ServerCommandSource> {
 
     @Override
     public int run(CommandContext<ServerCommandSource> context) {
-        MinecraftServer minecraftServer = context.getSource().getMinecraftServer();
+        MinecraftServer minecraftServer = context.getSource().getServer();
         CommandDispatcher<ServerCommandSource> commandDispatcher = minecraftServer.getCommandManager().getDispatcher();
 
         // unregister commands
