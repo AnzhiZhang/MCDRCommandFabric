@@ -6,7 +6,7 @@ plugins {
 sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
-archivesBaseName = project.archives_base_name
+archivesBaseName = project.archives_base_name + "-" + project.minecraft_version
 version = project.mod_version
 group = project.maven_group
 
@@ -16,12 +16,6 @@ repositories {
 	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
-	maven {
-		url 'https://maven.aliyun.com/nexus/content/groups/public'
-	}
-	maven {
-		url 'https://repository.hanbings.io/proxy'
-	}
 }
 
 dependencies {
@@ -35,11 +29,8 @@ dependencies {
 
 	// Uncomment the following line to enable the deprecated Fabric API modules. 
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
-
-	// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
-
-    implementation "com.alibaba.fastjson2:fastjson2:2.0.19"
-    include "com.alibaba.fastjson2:fastjson2:2.0.19"
+	implementation "com.alibaba.fastjson2:fastjson2:2.0.19"
+	include "com.alibaba.fastjson2:fastjson2:2.0.19"
 }
 
 processResources {

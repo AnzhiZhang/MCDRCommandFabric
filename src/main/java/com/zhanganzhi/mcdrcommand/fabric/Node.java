@@ -1,15 +1,16 @@
 package com.zhanganzhi.mcdrcommand.fabric;
 
-import com.alibaba.fastjson2.JSONObject;
+import java.util.ArrayList;
+
+import net.minecraft.server.command.CommandManager;
+import net.minecraft.server.command.ServerCommandSource;
 import com.mojang.brigadier.arguments.DoubleArgumentType;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
-import net.minecraft.server.command.CommandManager;
-import net.minecraft.server.command.ServerCommandSource;
 
-import java.util.ArrayList;
+import com.alibaba.fastjson2.JSONObject;
 
 
 public class Node {
