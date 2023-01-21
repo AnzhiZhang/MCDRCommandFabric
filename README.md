@@ -10,7 +10,7 @@ Register  [MCDR](https://github.com/Fallen-Breath/MCDReforged)  commands in Mine
 
 Example: `!!MCDR` will be registed as `/!!MCDR`, `!!qb` to `/!!qb`.
 
-Also needs install MCDReforged plugin [Minecraft Command Registe](https://github.com/AnzhiZhang/MCDReforgedPlugins/tree/master/minecraft_command_register)
+Also needs install MCDReforged plugin [Minecraft Command Register](https://github.com/AnzhiZhang/MCDReforgedPlugins/tree/master/minecraft_command_register)
 
 ---
 
@@ -18,7 +18,7 @@ Also needs install MCDReforged plugin [Minecraft Command Registe](https://github
 
 例：`!!MCDR` 将被注册为 `/!!MCDR`、`!!qb` 将被注册为 `/!!qb`。
 
-需要安装 MCDReforged 插件 [Minecraft Command Registe](https://github.com/AnzhiZhang/MCDReforgedPlugins/tree/master/minecraft_command_register)
+需要安装 MCDReforged 插件 [Minecraft Command Register](https://github.com/AnzhiZhang/MCDReforgedPlugins/tree/master/minecraft_command_register)
 
 <https://user-images.githubusercontent.com/37402126/206166484-891245f2-d148-487d-b7be-1b79766144bd.mp4>
 
