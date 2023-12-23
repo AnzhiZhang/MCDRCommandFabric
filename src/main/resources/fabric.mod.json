@@ -9,7 +9,7 @@
     "czruby"
   ],
   "contact": {
-    "homepage": "https://www.curseforge.com/minecraft/mc-mods/mcdr-command-fabric",
+    "homepage": "https://modrinth.com/mod/mcdr-command-fabric",
     "sources": "https://github.com/AnzhiZhang/MCDRCommandFabric"
   },
   "license": "GPL",
@@ -23,9 +23,9 @@
   "mixins": [
   ],
   "depends": {
-    "fabricloader": ">=0.14.10",
-    "fabric-api": "*",
-    "minecraft": "~1.19",
-    "java": ">=17"
+    "fabricloader": ">=0.15.0",
+    "minecraft": "~1.20.4",
+    "java": ">=17",
+    "fabric-api": "*"
   }
 }
