@@ -1,7 +1,7 @@
 # MCDR Command Fabric
 
 [![License](https://shields.io/github/license/AnzhiZhang/MCDRCommandFabric?label=License)](https://github.com/AnzhiZhang/MCDRCommandFabric/blob/master/LICENSE)
-[![Build](https://img.shields.io/github/actions/workflow/status/AnzhiZhang/MCDRCommandFabric/build.yml?label=Build&branch=master)](https://github.com/AnzhiZhang/MCDRCommandFabric/actions/workflows/release.yml)
+[![Build](https://img.shields.io/github/actions/workflow/status/AnzhiZhang/MCDRCommandFabric/build.yml?label=Build&branch=master)](https://github.com/AnzhiZhang/MCDRCommandFabric/actions/workflows/build.yml)
 [![Modrith](https://img.shields.io/modrinth/v/kV8qN2Aj?logo=modrinth&label=Modrinth&color=%2300AF5C)](https://modrinth.com/mod/mcdr-command-fabric)
 [![CurseForge](https://cf.way2muchnoise.eu/short_811204_downloads.svg)](https://www.curseforge.com/minecraft/mc-mods/mcdr-command-fabric)
 [![Release](https://shields.io/github/v/release/AnzhiZhang/MCDRCommandFabric?display_name=tag&include_prereleases&label=Release)](https://github.com/AnzhiZhang/MCDRCommandFabric/releases/latest)
