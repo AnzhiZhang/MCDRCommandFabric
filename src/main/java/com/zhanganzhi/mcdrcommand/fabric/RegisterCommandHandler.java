@@ -17,7 +17,6 @@ import com.mojang.brigadier.context.CommandContext;
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONObject;
 
-
 public class RegisterCommandHandler implements Command<ServerCommandSource> {
     private final ArrayList<String> registeredCommands = new ArrayList<>();
 

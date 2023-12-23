@@ -12,7 +12,6 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 
 import com.alibaba.fastjson2.JSONObject;
 
-
 public class Node {
     private final String name;
     private final String type;
