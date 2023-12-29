@@ -21,6 +21,6 @@ Example: `!!MCDR` will be registed as `/!!MCDR`, `!!qb` to `/!!qb`.
 
 ## Installation | 安装指南
 
-Install MCDReforged plugin [Minecraft Command Register](https://github.com/AnzhiZhang/MCDReforgedPlugins/tree/master/minecraft_command_register)
+Install this mod and then install MCDReforged plugin [Minecraft Command Register](https://github.com/AnzhiZhang/MCDReforgedPlugins/tree/master/minecraft_command_register)
 
-安装 MCDR 插件 [Minecraft Command Register](https://github.com/AnzhiZhang/MCDReforgedPlugins/tree/master/minecraft_command_register)
+安装此模组，并安装 MCDR 插件 [Minecraft Command Register](https://github.com/AnzhiZhang/MCDReforgedPlugins/tree/master/minecraft_command_register)
