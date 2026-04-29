@@ -32,10 +32,10 @@ public class RegisterCommandHandler implements Command<CommandSourceStack> {
         CommandDispatcher<CommandSourceStack> dispatcher = server.getCommands().getDispatcher();
 
         // unregister commands
-        RootCommandNode<CommandSourceStack> root = dispatcher.getRoot();
+        CommandNodeAccessor root = (CommandNodeAccessor) dispatcher.getRoot();
 
-        Map<String, CommandNode<?>> children = ((CommandNodeAccessor) root).getChildren();
-        Map<String, LiteralCommandNode<?>> literals = ((CommandNodeAccessor) root).getLiterals();
+        Map<String, CommandNode<?>> children = root.getChildren();
+        Map<String, LiteralCommandNode<?>> literals = root.getLiterals();
 
         for (String literal : this.registeredCommands) {
             children.remove(literal);
