@@ -8,7 +8,6 @@ import java.util.Optional;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import com.mojang.brigadier.tree.RootCommandNode;
 import com.mojang.serialization.JsonOps;
 import com.zhanganzhi.mcdrcommand.fabric.mixin.CommandNodeAccessor;
 import net.minecraft.commands.CommandSourceStack;
