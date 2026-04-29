@@ -1,12 +1,18 @@
 package com.zhanganzhi.mcdrcommand.fabric;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
-import java.util.Objects;
+import java.util.Optional;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
+import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import com.mojang.serialization.JsonOps;
+import com.zhanganzhi.mcdrcommand.fabric.mixin.CommandNodeAccessor;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.command.ServerCommandSource;
 import com.mojang.brigadier.tree.CommandNode;
 import com.mojang.brigadier.tree.LiteralCommandNode;
 import com.mojang.brigadier.Command;
@@ -14,61 +20,47 @@ import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 
-import com.alibaba.fastjson2.JSON;
-import com.alibaba.fastjson2.JSONObject;
+import net.minecraft.server.players.PlayerList;
 
-public class RegisterCommandHandler implements Command<ServerCommandSource> {
+public class RegisterCommandHandler implements Command<CommandSourceStack> {
     private final ArrayList<String> registeredCommands = new ArrayList<>();
 
     @Override
-    public int run(CommandContext<ServerCommandSource> context) {
-        MinecraftServer minecraftServer = context.getSource().getServer();
-        CommandDispatcher<ServerCommandSource> commandDispatcher = minecraftServer.getCommandManager().getDispatcher();
+    public int run(CommandContext<CommandSourceStack> context) throws CommandSyntaxException {
+        MinecraftServer server = context.getSource().getServer();
+        CommandDispatcher<CommandSourceStack> dispatcher = server.getCommands().getDispatcher();
 
         // unregister commands
-        try {
-            // CommandDispatcher field
-            Field rootCommandNodeField = commandDispatcher.getClass().getDeclaredField("root");
-            rootCommandNodeField.setAccessible(true);
+        CommandNodeAccessor root = (CommandNodeAccessor) dispatcher.getRoot();
 
-            // CommandNode fields
-            Field commandNodeChildrenField = CommandNode.class.getDeclaredField("children");
-            commandNodeChildrenField.setAccessible(true);
-            Field commandNodeLiteralsField = CommandNode.class.getDeclaredField("literals");
-            commandNodeLiteralsField.setAccessible(true);
+        Map<String, CommandNode<?>> children = root.getChildren();
+        Map<String, LiteralCommandNode<?>> literals = root.getLiterals();
 
-            // children
-            Map<String, CommandNode<ServerCommandSource>> children = (Map<String, CommandNode<ServerCommandSource>>) commandNodeChildrenField.get(rootCommandNodeField.get(commandDispatcher));
-            Map<String, LiteralCommandNode<ServerCommandSource>> literals = (Map<String, LiteralCommandNode<ServerCommandSource>>) commandNodeChildrenField.get(rootCommandNodeField.get(commandDispatcher));
-            for (String literal : registeredCommands) {
-                children.remove(literal);
-                literals.remove(literal);
-            }
-            registeredCommands.clear();
-        } catch (Exception exception) {
-            exception.printStackTrace();
+        for (String literal : this.registeredCommands) {
+            children.remove(literal);
+            literals.remove(literal);
         }
+        this.registeredCommands.clear();
 
         // register commands
-        try {
-            JSONObject jsonObject = JSON.parseObject(StringArgumentType.getString(context, "data"));
-            for (JSONObject nodeJsonObject : jsonObject.getJSONArray("data").toArray(JSONObject.class)) {
-                Node node = new Node(nodeJsonObject);
-                registeredCommands.add(node.getName());
-                commandDispatcher.register(node.getRootArgumentBuilder());
+        String data = StringArgumentType.getString(context, "data");
+        JsonElement array = JsonParser.parseString(data).getAsJsonObject().get("data");
+
+        Optional<List<Node>> result = Node.CODEC.listOf().parse(JsonOps.INSTANCE, array).result();
+        if (result.isPresent()) {
+            List<Node> nodes = result.get();
+            for (Node node : nodes) {
+                this.registeredCommands.add(node.getName());
+                dispatcher.register(node.buildRoot());
             }
-        } catch (Exception exception) {
-            exception.printStackTrace();
+            context.getSource().sendSuccess(
+                () -> Component.literal("Registered %s commands".formatted(nodes.size())),
+                false
+            );
         }
-
         // send command tree
-        minecraftServer.getPlayerManager().getPlayerList().forEach(
-                serverPlayerEntity ->
-                        Objects.requireNonNull(serverPlayerEntity.getServer())
-                                .getPlayerManager()
-                                .sendCommandTree(serverPlayerEntity)
-        );
-
+        PlayerList playerList = server.getPlayerList();
+        playerList.getPlayers().forEach(playerList::sendPlayerPermissionLevel);
         return Command.SINGLE_SUCCESS;
     }
 }
