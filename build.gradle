@@ -42,8 +42,6 @@ dependencies {
 	
 	// Uncomment the following line to enable the deprecated Fabric API modules. 
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
-	implementation "com.alibaba.fastjson2:fastjson2:2.0.19"
-	include "com.alibaba.fastjson2:fastjson2:2.0.19"
 }
 
 processResources {
